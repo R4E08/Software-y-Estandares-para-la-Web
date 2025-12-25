@@ -5,7 +5,7 @@ Proyecto web desarrollado para la asignatura **Software y Estándares para la We
 Grado en Ingeniería Informática del Software – Universidad de Oviedo  
 
 **Autor:** Richard Robin Roque Del Rio  
-**Curso:** 2024–2025  
+**Curso:** 2025–2026  
 
 ---
 
