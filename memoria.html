@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>MotoGP Desktop - Juego de memoria</title>
+    <link rel="icon" href="multimedia/favicon48px.ico" />
+
+    <meta name="author" content="Richard Robin Roque Del Rio" />
+    <meta name="description" content="Juego de memoria con cartas del proyecto MotoGP Desktop." />
+    <meta name="keywords" content="MotoGP, juego, memoria, cartas" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="estilo/estilo.css" />
+    <link rel="stylesheet" href="estilo/layout.css" />
+    <link rel="stylesheet" href="estilo/cards.css" />
+    <link rel="stylesheet" href="estilo/layout-cards.css" />
+<script src="js/menu.js"></script>
+    <!-- Importante: cronometro.js antes de memoria.js si Memoria usa Cronometro -->
+    <script src="js/cronometro.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1><a href="index.html">MotoGP Desktop</a></h1>
+        <button type="button" aria-expanded="false" title="Menu de navegacion">Menú</button>
+        <nav>
+            <a href="index.html" title="Página principal">Inicio</a>
+            <a href="piloto.html" title="Información del piloto">Piloto</a>
+            <a href="circuito.html" title="Información del circuito">Circuito</a>
+            <a href="meteorologia.html" title="Información de la meteorología">Meteorología</a>
+            <a href="clasificaciones.php" title="Información de las clasificaciones">Clasificaciones</a>
+            <a class="active" href="juegos.html" title="Listado de juegos">Juegos</a>
+            <a href="ayuda.html" title="Información sobre la ayuda">Ayuda</a>
+        </nav>
+    </header>
+
+    <!-- Migas fuera de main -->
+    <p>
+        Estás en:
+        <a href="index.html" title="Página principal">Inicio</a> |
+        <a href="juegos.html" title="Listado de juegos">Juegos</a> |
+        <strong>Memoria</strong>
+    </p>
+
+    <main>
+        <h2>Juego de memoria con cartas</h2>
+
+        <!-- Este debe ser el primer p dentro de main -->
+        <p>00:00.0</p>
+
+        <!-- Cartas directamente en main (sin section) -->
+        <article>
+            <h3>Tarjeta</h3>
+            <img src="multimedia/logos/honda.svg" alt="Honda" />
+        </article>
+        <article>
+            <h3>Tarjeta</h3>
+            <img src="multimedia/logos/honda.svg" alt="Honda" />
+        </article>
+
+        <article>
+            <h3>Tarjeta</h3>
+            <img src="multimedia/logos/yamaha.svg" alt="Yamaha" />
+        </article>
+        <article>
+            <h3>Tarjeta</h3>
+            <img src="multimedia/logos/yamaha.svg" alt="Yamaha" />
+        </article>
+
+        <article>
+            <h3>Tarjeta</h3>
+            <img src="multimedia/logos/ducati.svg" alt="Ducati" />
+        </article>
+        <article>
+            <h3>Tarjeta</h3>
+            <img src="multimedia/logos/ducati.svg" alt="Ducati" />
+        </article>
+
+        <article>
+            <h3>Tarjeta</h3>
+            <img src="multimedia/logos/ktm.svg" alt="KTM" />
+        </article>
+        <article>
+            <h3>Tarjeta</h3>
+            <img src="multimedia/logos/ktm.svg" alt="KTM" />
+        </article>
+
+        <article>
+            <h3>Tarjeta</h3>
+            <img src="multimedia/logos/aprilia.svg" alt="Aprilia" />
+        </article>
+        <article>
+            <h3>Tarjeta</h3>
+            <img src="multimedia/logos/aprilia.svg" alt="Aprilia" />
+        </article>
+
+        <article>
+            <h3>Tarjeta</h3>
+            <img src="multimedia/logos/motogp.svg" alt="MotoGP" />
+        </article>
+        <article>
+            <h3>Tarjeta</h3>
+            <img src="multimedia/logos/motogp.svg" alt="MotoGP" />
+        </article>
+    </main>
+
+    <script src="js/memoria.js"></script>
+</body>
+
+</html>

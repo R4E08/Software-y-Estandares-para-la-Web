@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>MotoGP Desktop - Ayuda</title>
+	<link rel="icon" href="multimedia/favicon48px.ico">
+
+	<meta name="author" content="Richard Robin Roque Del Rio" />
+	<meta name="description" content="Información de ayuda del proyecto MotoGP Desktop" />
+	<meta name="keywords"
+		content="MotoGP, ayuda, información, piloto, circuito, meteorología, clasificaciones, juegos, cronómetro" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
+	<link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+	<script src="js/menu.js"></script>
+</head>
+
+<body>
+	<header>
+		<h1><a href="index.html" title="Página principal">MotoGP Desktop</a></h1>
+		<button type="button" aria-expanded="false" title="Menu de navegacion">Menú</button>
+		<nav>
+			<a href="index.html" title="Página principal">Inicio</a>
+			<a href="piloto.html" title="Información del piloto">Piloto</a>
+			<a href="circuito.html" title="Información del circuito">Circuito</a>
+			<a href="meteorologia.html" title="Información de la meteorología">Meteorología</a>
+			<a href="clasificaciones.php" title="Clasificaciones">Clasificaciones</a>
+			<a href="juegos.html" title="Listado de juegos">Juegos</a>
+			<a class="active" href="ayuda.html" title="Ayuda del sitio">Ayuda</a>
+		</nav>
+	</header>
+<p>Estás en: <a href="index.html" title="Página principal">Inicio</a> | <strong>Ayuda</strong></p>
+
+
+<main>
+
+	<h2>Sección de ayuda</h2>
+
+	<section>
+
+		<h3>Juegos</h3>
+		<p>
+			Sección que agrupa los distintos juegos y utilidades interactivas desarrolladas
+			en el proyecto MotoGP Desktop.
+		</p>
+
+		<h4>Juego de memoria con cartas</h4>
+		<p>
+			Juego interactivo en el que el usuario debe emparejar cartas iguales utilizando
+			la memoria visual. Se ha implementado mediante programación orientada a objetos
+			en JavaScript y gestión de eventos del DOM.
+		</p>
+
+		<h4>Cronómetro (JavaScript)</h4>
+		<p>
+			Herramienta diseñada para medir el tiempo transcurrido durante las pruebas.
+			Se controla mediante tres botones (Arrancar, Parar y Reiniciar) y muestra el
+			tiempo en minutos, segundos y décimas.
+		</p>
+		<p>
+			Está implementado en ECMAScript mediante una clase orientada a objetos denominada
+			<code>Cronometro</code>, utilizando el objeto <code>Temporal</code> cuando está disponible,
+			con alternativa basada en <code>Date</code>.
+		</p>
+
+		<h4>Cronómetro (PHP)</h4>
+		<p>
+			Versión del cronómetro implementada en PHP, utilizada en el contexto del servidor para
+			controlar y registrar tiempos asociados a pruebas. Permite iniciar, detener y obtener
+			el tiempo medido, facilitando su almacenamiento en base de datos junto con los resultados
+			del test.
+		</p>
+
+		<h4>Configuración Test</h4>
+		<p>
+			Apartado destinado a la preparación del entorno de pruebas en el servidor y a la gestión
+			de la base de datos utilizada por el test de usabilidad (por ejemplo, desde el panel de
+			acciones disponible en <code>test.php</code>).
+		</p>
+		<ul>
+			<li>Inicializar la base de datos del test.</li>
+			<li>Reiniciar los datos almacenados.</li>
+			<li>Eliminar completamente la información de las pruebas.</li>
+			<li>Exportar los resultados para su análisis posterior.</li>
+		</ul>
+
+		<h4>Pruebas de usabilidad</h4>
+		<p>
+			Sección dedicada a la realización de pruebas de usabilidad sobre el sitio. El usuario
+			introduce sus datos de perfil, responde a un cuestionario y se registra el tiempo empleado,
+			además de comentarios y valoración final.
+		</p>
+		<p>
+			Los datos recogidos se almacenan en la base de datos para su análisis posterior,
+			permitiendo justificar mejoras de usabilidad en la documentación del proyecto.
+		</p>
+
+	</section>
+</main>
+</body>
+
+</html>

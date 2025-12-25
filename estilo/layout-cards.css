@@ -1,0 +1,150 @@
+/*
+  Autor: Richard Roque Del Río – UO302698
+*/
+
+/* Contenedor principal del juego de memoria */
+/* main */
+/* especificación: (0,0,1) */
+/* hereda font-family y color desde body */
+/* Advertencia W3C (interpretación del validador):
+   - Se reportan column-gap / row-gap porque gap es un shorthand
+     que define ambos valores simultáneamente.
+   - No existe definición previa fuera de @media, por lo que
+     no se trata de una redefinición, sino de la definición inicial. */
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 columnas */
+    gap: 1.5rem;
+    padding: 2rem;
+    justify-items: center;
+    align-items: start;
+    perspective: 62.5rem;
+    /* necesario para efecto 3D */
+}
+
+/* H2 ocupa toda la primera fila */
+/* main h2 */
+/* especificación: (0,0,2) */
+/* hereda color y font-family desde body */
+main h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Texto introductorio */
+/* main > p:first-of-type */
+/* especificación: (0,1,2) */
+/* hereda color y background-color desde body */
+main>p:first-of-type {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Cada carta */
+/* main article */
+/* especificación: (0,0,2) */
+/* hereda font-family desde body */
+main article {
+    width: 15rem;
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    box-shadow: 0.125rem 0.125rem 0.375rem rgba(0, 0, 0, 0.2);
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+/* Imagen dentro de la carta */
+/* main article img */
+/* especificación: (0,0,3) */
+/* elemento gráfico sin contenido textual */
+main article img {
+    max-width: 80%;
+    max-height: 80%;
+    display: block;
+    transition: transform 0.6s;
+    backface-visibility: hidden;
+    /* evita que se vea al girar */
+}
+
+/* Carta volteada o revelada */
+/* main article[data-estado] */
+/* especificación: (0,1,2) */
+main article[data-estado=volteada],
+main article[data-estado=revelada] {
+    transform: rotateY(180deg);
+}
+
+/* Adaptabilidad para tablets */
+/* @media (min-width: 799px) and (max-width: 1200px) */
+/* Advertencias W3C:
+   - Redefinición de grid-template-columns
+   - Redefinición de gap
+   - Redefinición de padding
+   - Redefinición de width y height
+   - Redefinición de font-size
+   - Justificación: ajustes intencionados para adaptar
+     el layout a resoluciones tipo tablet. */
+@media (min-width: 799px) and (max-width: 1200px) {
+
+    /* main */
+    /* especificación: (0,0,1) */
+    main {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    /* main article */
+    /* especificación: (0,0,2) */
+    main article {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    /* main h2 */
+    /* especificación: (0,0,2) */
+    main h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Adaptabilidad para móviles */
+/* @media (max-width: 799px) */
+/* Advertencias W3C:
+   - Redefinición de grid-template-columns
+   - Redefinición de gap
+   - Redefinición de padding
+   - Redefinición de width y height
+   - Redefinición de font-size
+   - Justificación: ajustes específicos para
+     pantallas pequeñas (móvil). */
+@media (max-width: 799px) {
+
+    /* main */
+    /* especificación: (0,0,1) */
+    main {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    /* main article */
+    /* especificación: (0,0,2) */
+    main article {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    /* main h2 */
+    /* especificación: (0,0,2) */
+    main h2 {
+        font-size: 1.5rem;
+    }
+}

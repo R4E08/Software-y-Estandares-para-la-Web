@@ -1,0 +1,149 @@
+/*
+  Autor: Richard Roque Del Río – UO302698
+*/
+
+/* Contenedor principal de las cartas */
+/* main section */
+/* especificación: (0,0,2) */
+/* hereda font-family y color desde body */
+/* Advertencias W3C:
+   - Redefinición de column-gap / row-gap mediante gap
+   - Justificación: el uso de gap es intencionado para controlar
+     de forma conjunta la separación entre filas y columnas
+     en un contenedor grid. No produce efectos laterales. */
+main section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17em, 1fr));
+    justify-items: center;
+    align-items: center;
+    gap: 3.2em;
+    margin: 3em auto;
+    padding: 2em;
+    max-width: 85em;
+}
+
+/* Carta base (estructura y dimensiones) */
+/* main article */
+/* especificación: (0,0,2) */
+/* hereda font-family desde body */
+/* Advertencia W3C:
+   - Hay un color de fondo establecido y no hay color de primer plano
+   - Justificación: el texto visible se encuentra en elementos hijos
+     (article h3), que definen explícitamente su color. El contenedor
+     article no muestra texto directamente. */
+main article {
+    width: 16em;
+    height: 20em;
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+    box-shadow: 0.25em 0.25em 0.4em rgba(0, 0, 0, 0.25);
+    border-radius: 0.8em;
+    background-color: #1C7CCC;
+}
+
+/* Giro de carta al activarse o quedar revelada */
+/* main article[data-estado] */
+/* especificación: (0,1,2) */
+/* hereda font-family desde body */
+main article[data-estado="volteada"],
+main article[data-estado="revelada"] {
+    transform: rotateY(180deg);
+}
+
+/* Caras de la carta (frontal y trasera) */
+/* article h3, article img */
+/* especificación: (0,0,2) */
+/* hereda font-family desde body */
+article h3,
+article img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 0.8em;
+    backface-visibility: hidden;
+}
+
+/* Cara frontal (texto “Tarjeta de memoria”) */
+/* article h3 */
+/* especificación: (0,0,2) */
+/* hereda font-family desde body */
+/* Advertencia W3C:
+   - Hay un color de fondo establecido y no hay color de primer plano
+   - Justificación: se define explícitamente color: white, por lo que
+     el contraste está garantizado y verificado. */
+article h3 {
+    background-color: #1C7CCC;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.3em;
+    margin: 0;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+
+/* Cara trasera (imagen del equipo) */
+/* article img */
+/* especificación: (0,0,2) */
+/* hereda font-family desde body */
+article img {
+    transform: rotateY(180deg);
+    background-color: #ffffff;
+    object-fit: contain;
+    padding: 1.4em;
+}
+
+/* Efecto visual al pasar el ratón */
+/* article:hover */
+/* especificación: (0,1,1) */
+/* hereda font-family desde body */
+article:hover {
+    transform: scale(1.04);
+}
+
+/* Redefiniciones mediante media queries */
+/* @media (max-width: 64em) */
+/* Advertencias W3C:
+   - Redefinición de grid-template-columns
+   - Redefinición de gap
+   - Redefinición de width y height
+   - Justificación: redefiniciones intencionadas para adaptar
+     el diseño a resoluciones tablet. No produce efectos laterales. */
+@media (max-width: 64em) {
+
+    main section {
+        grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
+        gap: 2.5em;
+    }
+
+    main article {
+        width: 14em;
+        height: 18em;
+    }
+}
+
+/* @media (max-width: 48em) */
+/* Advertencias W3C:
+   - Redefinición de grid-template-columns
+   - Redefinición de gap
+   - Redefinición de padding
+   - Redefinición de width y height
+   - Justificación: ajustes específicos para dispositivos móviles.
+     Las propiedades se redefinen de forma controlada y verificada. */
+@media (max-width: 48em) {
+
+    main section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2em;
+        padding: 1.2em;
+    }
+
+    main article {
+        width: 12em;
+        height: 16em;
+    }
+}

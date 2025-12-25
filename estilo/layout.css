@@ -1,0 +1,262 @@
+/*
+  Autor: Richard Roque Del Río – UO302698
+*/
+
+/* HEADER – ESCRITORIO */
+
+/* header */
+/* especificación: (0,0,1) */
+/* hereda font-family desde body */
+/* Advertencia W3C (interpretación del validador):
+   - Se reportan column-gap / row-gap porque gap es un shorthand.
+   - No existe definición previa de row-gap/column-gap fuera de @media.
+     Se trata de la definición inicial del espaciado del contenedor flex. */
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+}
+
+/* nav */
+/* especificación: (0,0,1) */
+/* hereda font-family desde body */
+/* Advertencia W3C (interpretación del validador):
+   - Uso de gap como shorthand (afecta a row-gap y column-gap).
+   - No hay redefinición previa fuera de @media. */
+nav {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+
+
+/* MAPA DINÁMICO DEL CIRCUITO */
+
+/* main section:last-of-type > div */
+/* especificación: (0,1,3) */
+/* hereda font-family desde body */
+/* define dimensiones explícitas para el contenedor del mapa */
+main section:last-of-type>div {
+    width: 100%;
+    height: 60vh;
+    border: 0.15rem solid #333;
+    margin-top: 1rem;
+}
+
+/* main section div */
+/* especificación: (0,0,2) */
+/* hereda font-family desde body */
+/* Advertencia W3C:
+   - Se establece min-height tras definir height en un selector más específico.
+   - No es una redefinición directa, sino una restricción mínima complementaria. */
+main section div {
+    min-height: 60vh;
+}
+
+/* main a */
+/* especificación: (0,0,2) */
+/* hereda color y background-color desde body */
+main a {
+    text-decoration: underline;
+    text-underline-offset: 0.12em;
+    text-decoration-thickness: 0.08em;
+}
+
+/* Adaptación tablet */
+/* @media (max-width: 50em) */
+/* Advertencia W3C:
+   - Redefinición de height
+   - Justificación: ajuste intencionado de la altura del mapa
+     para resoluciones tipo tablet. */
+@media (max-width: 50em) {
+    main section:last-of-type>div {
+        height: 50vh;
+    }
+}
+
+/* Adaptación móvil */
+/* @media (max-width: 40em) */
+/* Advertencias W3C:
+   - Redefinición de height
+   - Redefinición de display, flex-direction, align-items y gap
+   - Justificación: cambios controlados para adaptar el layout
+     a dispositivos móviles. */
+@media (max-width: 40em) {
+
+    main section:last-of-type>div {
+        height: 20em;
+    }
+
+    /* Header responsive */
+
+    /* header h1 */
+    /* especificación: (0,0,2) */
+    header h1 {
+        align-self: flex-start;
+    }
+
+    /* header nav */
+    /* especificación: (0,0,2) */
+    header nav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    /* header nav a */
+    /* especificación: (0,0,3) */
+    header nav a {
+        justify-content: flex-start;
+    }
+
+    /* Ocultar migas en móvil */
+
+    /* body > p:first-of-type */
+    /* especificación: (0,1,3) */
+    /* Redefinición de display justificada por adaptación responsive */
+    body>p:first-of-type {
+        display: none;
+    }
+
+    /* Multimedia adaptable */
+
+    /* video, audio */
+    /* especificación: (0,0,1) */
+    video,
+    audio {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* CARRUSEL */
+
+/* article h3 + img */
+/* especificación: (0,0,3) */
+/* Advertencias W3C:
+   - Hay un color de fondo establecido y no hay color de primer plano
+   - Justificación: img no renderiza texto; la advertencia no aplica
+     a elementos gráficos. */
+article h3+img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: none;
+
+    max-height: 45em;
+    object-fit: cover;
+}
+
+/* Tablet */
+/* @media (max-width: 48em) */
+/* Advertencia W3C:
+   - Redefinición de height
+   - Justificación: ajuste de altura del carrusel en tablet. */
+@media (max-width: 48em) {
+    article h3+img {
+        height: 20em;
+    }
+}
+
+/* Móvil */
+/* @media (max-width: 40em) */
+/* Advertencias W3C:
+   - Redefinición de max-width
+   - Redefinición de height
+   - Justificación: adaptación visual del carrusel a pantallas pequeñas. */
+@media (max-width: 40em) {
+    article h3+img {
+        max-width: 100%;
+        height: 14em;
+    }
+}
+
+/* Evita desbordamiento horizontal */
+
+/* img, video, audio, table */
+/* especificación: (0,0,1) */
+img,
+video,
+audio,
+table {
+    max-width: 100%;
+}
+
+/* Evita desbordamiento svg */
+
+/* section svg */
+/* especificación: (0,0,2) */
+section svg {
+    width: 100%;
+    height: auto;
+}
+
+/* MENÚ RESPONSIVE */
+
+/* header > button[type="button"] */
+/* especificación: (0,1,2) */
+/* estado por defecto en escritorio */
+header>button[type="button"] {
+    display: none;
+}
+
+/* Móvil/Tablet */
+/* @media (max-width: 40em) */
+/* Advertencias W3C:
+   - Redefinición de display, flex-direction, align-items y gap
+   - Justificación: comportamiento responsive del menú hamburguesa. */
+@media (max-width: 40em) {
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+
+    /* Mostrar botón en móvil */
+
+    /* header > button[type="button"] */
+    header>button[type="button"] {
+        display: block;
+        padding: 0.6rem 0.8rem;
+        border: 0.1rem solid currentColor;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    /* Nav cerrado por defecto */
+
+    /* header > nav */
+    header>nav {
+        display: none;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    /* Nav abierto cuando el botón indica expanded */
+
+    /* header > button[aria-expanded] + nav */
+    header>button[type="button"][aria-expanded="true"]+nav {
+        display: flex;
+    }
+
+    /* Links ocupan todo el ancho para facilitar pulsación */
+
+    /* header > nav > a */
+    header>nav>a {
+        display: block;
+        padding: 0.5rem 0;
+    }
+
+    /* Foco visible (accesibilidad teclado) */
+
+    /* header > button:focus-visible,
+       header > nav > a:focus-visible */
+    header>button[type="button"]:focus-visible,
+    header>nav>a:focus-visible {
+        outline: 0.2rem solid currentColor;
+        outline-offset: 0.2rem;
+    }
+}

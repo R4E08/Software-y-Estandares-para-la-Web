@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<link rel="icon" href="multimedia/favicon48px.ico">
+
+	<title>MotoGP Desktop - Circuito</title>
+
+	<meta name="author" content="Richard Robin Roque Del Rio" />
+	<meta name="description" content="Información del circuito MotoGP usando API File de HTML5" />
+	<meta name="keywords" content="MotoGP, circuito, información, HTML5 File API" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link rel="stylesheet" href="estilo/estilo.css" />
+	<link rel="stylesheet" href="estilo/layout.css" />
+	<script src="js/menu.js"></script>
+
+	<script src="js/circuito.js"></script>
+</head>
+
+<body>
+
+	<header>
+		<h1><a href="index.html" title="Página principal">MotoGP Desktop</a></h1>
+		<button type="button" aria-expanded="false" title="Menu de navegacion">Menú</button>
+	<nav>
+		<a href="index.html" title="Página principal">Inicio</a>
+		<a href="piloto.html" title="Información del piloto">Piloto</a>
+		<a class="active" href="circuito.html" title="Información del circuito">Circuito</a>
+		<a href="meteorologia.html" title="Información de la meteorología">Meteorología</a>
+		<a href="clasificaciones.php" title="Información de las clasificaciones">Clasificaciones</a>
+		<a href="juegos.html" title="Listado de juegos">Juegos</a>
+		<a href="ayuda.html" title="Información sobre la ayuda">Ayuda</a>
+	</nav>
+	</header>
+	
+<p>Estás en: <a href="index.html" title="Página principal">Inicio</a> | <strong>Circuito</strong></p>
+
+<main>
+
+	<section>
+		<h2>Información del circuito</h2>
+		<!-- Aquí se cargará InfoCircuito.html automáticamente -->
+	</section>
+
+	<section>
+		<h2>Altimetría (SVG)</h2>
+	
+		<label for="svgFile">Subir archivo SVG:</label>
+		<input type="file" id="svgFile" accept=".svg,image/svg+xml" />
+	</section>
+	
+	<section>
+		<h2>Mapa del circuito (KML)</h2>
+	
+		<label for="kmlFile">Subir archivo KML:</label>
+		<input type="file" id="kmlFile" accept=".kml,application/vnd.google-earth.kml+xml" />
+	
+		<div></div>
+	</section>
+
+</main>
+
+
+	
+	
+	
+
+</body>
+
+</html>

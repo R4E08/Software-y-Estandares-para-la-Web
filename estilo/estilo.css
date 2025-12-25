@@ -1,0 +1,160 @@
+/*
+  Autor: Richard Roque Del Río – UO302698
+*/
+
+/* body */
+/* especificación: (0,0,1) */
+/* elemento raíz del documento */
+/* define explícitamente color de fondo y primer plano */
+body {
+    font-family: "Trebuchet MS", "Gill Sans", Arial, sans-serif;
+    background-color: #ffffff;
+    /* Fondo blanco definido explícitamente */
+    color: #000000;
+    /* Texto negro definido explícitamente */
+}
+
+
+/* body > main > p > strong */
+/* especificación: (0,1,3) */
+/* hereda color y background-color desde body */
+body>main>p>strong {
+    font-size: 1.2em;
+}
+
+
+/* h1 */
+/* especificación: (0,0,1) */
+/* Advertencia W3C:
+   - Hay un color de primer plano establecido y no hay color de fondo
+   - Justificación: h1 se muestra siempre dentro de header,
+     que define explícitamente background-color negro.
+     La herencia está comprobada y no genera problemas de contraste. */
+h1 {
+    color: #ffffff;
+    /* blanco – máximo contraste en fondos oscuros */
+}
+
+
+/* ENLACES GENERALES (FUERA DEL HEADER) */
+/* a */
+/* especificación: (0,0,1) */
+/* Advertencia W3C:
+   - Hay un color de primer plano establecido y no hay color de fondo
+   - Justificación: los enlaces heredan el background-color del
+     elemento contenedor (body o main), que define fondo blanco.
+     Contraste verificado y sin efectos laterales. */
+a {
+    text-decoration-line: none;
+    color: #1C1C1C;
+}
+
+
+/* a:hover */
+/* especificación: (0,1,1) */
+/* Advertencia W3C:
+   - Hay un color de primer plano establecido y no hay color de fondo
+   - Justificación: el fondo es heredado del contenedor.
+     El estado hover se diferencia además mediante subrayado,
+     no dependiendo únicamente del color. */
+a:hover {
+    color: #005A9C;
+
+    text-decoration: underline;
+    /* diferenciación sin depender del color */
+    text-decoration-thickness: 0.12em;
+    text-underline-offset: 0.18em;
+}
+
+
+/* header */
+/* especificación: (0,0,1) */
+/* define explícitamente color de fondo y primer plano */
+header {
+    background-color: #000000;
+    /* Negro */
+    color: #ffffff;
+    /* Blanco */
+}
+
+
+/* header a */
+/* especificación: (0,0,2) */
+/* Advertencia W3C:
+   - Hay un color de primer plano establecido y no hay color de fondo
+   - Justificación: el enlace hereda background-color negro del header.
+     Uso de color: inherit para mantener coherencia visual.
+     Contraste comprobado. */
+header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* header nav */
+/* especificación: (0,0,2) */
+/* define explícitamente color de fondo y primer plano */
+header nav {
+    background-color: #000000;
+    /* Negro */
+    color: #ffffff;
+    /* Blanco */
+}
+
+
+/* header nav a */
+/* especificación: (0,0,3) */
+/* Advertencia W3C:
+   - Hay un color de primer plano establecido y no hay color de fondo
+   - Justificación: los enlaces heredan el fondo negro del nav.
+     La definición explícita del color garantiza contraste adecuado. */
+header nav a {
+    color: #ffffff;
+}
+
+
+/* header nav a:hover */
+/* especificación: (0,1,3) */
+/* Advertencia W3C:
+   - Hay un color de primer plano establecido y no hay color de fondo
+   - Justificación: el estado hover hereda background-color del nav.
+     El color amarillo se ha verificado como visible sobre fondo negro. */
+header nav a:hover {
+    color: #e9c00a;
+    /* amarillo visible */
+}
+
+
+/* header h1 a:hover */
+/* especificación: (0,1,3) */
+/* Advertencia W3C:
+   - Hay un color de primer plano establecido y no hay color de fondo
+   - Justificación: hereda fondo negro del header.
+     Cambio de color intencionado para indicar interacción. */
+header h1 a:hover {
+    color: #e9c00a;
+}
+
+
+/* header nav a.active */
+/* especificación: (0,1,3) */
+/* Advertencia W3C:
+   - Hay un color de primer plano establecido y no hay color de fondo
+   - Justificación: el enlace activo hereda fondo negro del nav.
+     El color rojo se utiliza como indicador de estado activo,
+     con contraste suficiente y verificado. */
+header nav a.active {
+    color: #ff3b3b;
+    /* rojo vivo visible */
+}
+
+
+/* body header button */
+/* especificación: (0,0,3) */
+/* Advertencia W3C:
+   - Hay un color de primer plano establecido y no hay color de fondo
+   - Justificación: el botón se encuentra dentro del header y hereda
+     su background-color negro. El color blanco garantiza legibilidad. */
+body header button {
+    color: #ffffff;
+}

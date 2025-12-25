@@ -1,0 +1,30 @@
+"TABLA: Usuarios"
+id_usuario,profesion,edad,genero,pericia_informatica
+1,"Estudiante Informatica",20,Femenino,10
+2,Odontologa,34,Femenino,3
+3,"Ingeniero Quimico",38,Masculino,6
+4,Estudiante,24,Femenino,5
+5,Dependiente,56,Masculino,3
+6,"Estudiante de Derecho",21,Femenino,8
+7,Repartidor,21,Masculino,7
+
+"TABLA: Resultados"
+id_resultado,id_usuario,id_dispositivo,tiempo_segundos,completado,comentarios,propuestas_mejora,valoracion
+1,1,1,260,1,"La información podria estar mejor organizada.","Agrupar información clave",9
+2,2,2,384,1,"Me costo encontrar algunos datos","Que sea un poco mas llamativa la informacion calve",8
+3,3,3,345,1,"Los textos se ven un poco pequeños","Aumentar el tamaño de las fuentes",6
+4,4,1,315,1,"La información es clara pero tarde en entender las secciones ","Mejorar las etiquetas del menu.",8
+5,5,2,438,1,"Me costo mucho navegar entre las distintas paginas no esta muy claro","Que se entienda mejor ",6
+6,6,3,250,1,"Bastante sencilla y intuitiva la navegación","Nada que agregar",9
+7,7,1,336,1,"Todo esta claro.","Quizás reforzar jerarquía visual",9
+
+"TABLA: Observaciones"
+id_observacion,id_usuario,comentario
+1,1,"Navega con fluidez."
+2,2,"Le costo un poco encontrar la información de algunas preguntas y confundió sensación térmica con temperatura"
+3,3,"Algunas dificultades con el tamaño de la fuente en dispositivo móvil"
+4,4,"Dudas iniciales con respecto a las secciones"
+5,5,"Le costaba un poco la navegación y si distraía con cosas no relacionadas con las preguntas"
+6,6,"Lo hizo muy rápido encontró las preguntas con bastante facilidad"
+7,7,"Encontró las respuestas sin problemas relevantes"
+
