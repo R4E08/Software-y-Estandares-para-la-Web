@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 */
 function cargarGoogleMaps() {
     const script = document.createElement("script");
-    script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAWT72x-CeIFRPLXYDYKI6RPO540orh0p4";
+    script.src = "https://maps.googleapis.com/maps/api/js?key=XXX";
     script.async = true;
     document.head.appendChild(script);
 
